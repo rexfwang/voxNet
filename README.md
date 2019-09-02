@@ -33,7 +33,9 @@ Point cloud data is transformed into 32x32x32 voxel grid, and then traind by Vox
 
 The CNN model is a simple 2 layers of 3D convlution with max pooling and following by fully connected layers. Depending on if it's a binary classification of multiclass classification, the later layer activation function is sigmoid or softmax.
 
-More detail can be found from the paper.
+![voxnet](img/voxNet.png)
+(Diagram from the [paper](https://www.ri.cmu.edu/pub_files/2015/9/voxnet_maturana_scherer_iros15.pdf))
+
 
 # Binary classification results (vehicle vs pedestrian)
 For binary classification, I combined 4wd, bus, car, truck, ute, and van data into vehicle class (188 instances), and classify them with pedestrian data (152 instances.) The data is shuffled and split into training and validation set (80%:20%). With 5 epochs, the accuracy for training set and validation set are 94% and 85%.
