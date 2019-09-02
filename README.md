@@ -33,13 +33,15 @@ Point cloud data is transformed into 32x32x32 voxel grid, and then traind by Vox
 
 The CNN model is a simple 2 layers of 3D convlution with max pooling and following by fully connected layers. Depending on if it's a binary classification of multiclass classification, the later layer activation function is sigmoid or softmax.
 
+More detail can be found from the paper.
+
 # Binary classification results (vehicle vs pedestrian)
 For binary classification, I combined 4wd, bus, car, truck, ute, and van data into vehicle class (188 instances), and classify them with pedestrian data (152 instances.) The data is shuffled and split into training and validation set (80%:20%). With 5 epochs, the accuracy for training set and validation set are 94% and 85%.
 
 | Data | Accuracy |
 |------|----------|
-| Training | 94% |
-| Validation | 85% |
+| Training | 91.2% |
+| Validation | 92.7% |
 
 ![binaryResult](img/binAcc.png)
 ![binaryConfusionMatrix](img/binConfMap.png)
@@ -70,8 +72,8 @@ I trained the model with 10 epochs and the accuracies are 85% and 67% for traini
 
 | Data | Accuracy |
 |------|----------|
-| Training | 85% |
-| Validation | 67% |
+| Training | 83.7% |
+| Validation | 85.7% |
 
 ![mulResult](img/mulAcc.png)
 ![mulConfusionMatrix](img/mulConfMap.png)
@@ -80,10 +82,20 @@ We can see that trunk class performed worst among all the classes. Here are the 
 
 | Class | Accuracy |
 |------|----------|
-| Car | 85% |
-| Pedestrian | 67% |
-| Traffic sign | 67% |
-| Trunk | 67% |
+| Car | 88.89% |
+| Pedestrian | 94.59% |
+| Traffic sign | 100% |
+| Trunk | 40% |
+
+# 23 classes
+I also tried to classify 23 classes (removed 3 classes that only contain 1 instance) and the result wasn't good. It's most likely caused by small dataset and inbalanced data.
+
+![fullConfusionMatrix](img/fullConfMap.png)
+
+| Data | Accuracy |
+|------|----------|
+| Training | 62.75% |
+| Validation | 47.62% |
 
 # Final thoughs
 VoxNet is a straightforward approach to utilize neural network on 3D data. However, 32x32x32 voxel grids lose granularities. This dataset is also very limited. I would like to try VoxNet on more complicated dataset and some other more models that uses point cloud data directly, such as PointNet.
