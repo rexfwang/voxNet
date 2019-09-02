@@ -33,7 +33,8 @@ Point cloud data is transformed into 32x32x32 voxel grid, and then traind by Vox
 
 The CNN model is a simple 2 layers of 3D convlution with max pooling and following by fully connected layers. Depending on if it's a binary classification of multiclass classification, the later layer activation function is sigmoid or softmax.
 
-![voxnet](img/voxNet.png)
+<img src="img/voxNet.png" alt="voxNet" width="400"/>
+
 (Diagram from the [paper](https://www.ri.cmu.edu/pub_files/2015/9/voxnet_maturana_scherer_iros15.pdf))
 
 
