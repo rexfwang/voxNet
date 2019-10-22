@@ -39,7 +39,7 @@ The CNN model is a simple 2 layers of 3D convlution with max pooling and followi
 
 
 # Binary classification results (vehicle vs pedestrian)
-For binary classification, I combined 4wd, bus, car, truck, ute, and van data into vehicle class (188 instances), and classify them with pedestrian data (152 instances.) The data is shuffled and split into training and validation set (80%:20%). With 5 epochs, the accuracy for training set and validation set are 94% and 85%.
+For binary classification, I combined 4wd, bus, car, truck, ute, and van data into vehicle class (188 instances), and classify them with pedestrian data (152 instances.) The data is shuffled and split into training and validation set (80%:20%). With 5 epochs, the accuracy for training set and validation set are 91% and 93%.
 
 | Data | Accuracy |
 |------|----------|
